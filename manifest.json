@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Pokéflix Auto-Play",
+  "version": "1.0",
+  "description": "Automatically play the next episode on Pokéflix",
+  "permissions": ["activeTab", "scripting"],
+  "host_permissions": [
+    "https://pokeflix.tv/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://pokeflix.tv/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
